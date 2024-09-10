@@ -26,7 +26,7 @@
         
         header {
             background-color: white;
-            padding: 50px;
+            padding: 20px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         
@@ -34,6 +34,7 @@
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
         }
@@ -41,6 +42,7 @@
         .logo {
             width: 100px;
             height: 50px;
+            margin-right: 20px;
         }
         
         h1 {
@@ -51,6 +53,33 @@
             flex-grow: 1;
         }
         
+        @media (max-width: 768px) {
+            header {
+                padding: 10px;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .logo {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+                text-align: center;
+            }
+        }
+        
+        /* Option to remove white background */
+        /*
+        header {
+            background-color: transparent;
+            box-shadow: none;
+        }
         .banner {
             background-color: var(--primary-color);
             color: white;
@@ -525,20 +554,7 @@
                 <p>Get a Free copy of This Course</p>
                 <a href="#" class="btn">Download Now</a>
             </div>
-			<div class="banner">
-            <div class="ad-container">
-                <!-- Ad banner placeholder -->
-                <script type="text/javascript">
-                    atOptions = {
-                        'key' : 'b29ceb56b7b50da58de43c90c8a45fcf',
-                        'format' : 'iframe',
-                        'height' : 60,
-                        'width' : 468,
-                        'params' : {}
-                    };
-                </script>
-                <script type="text/javascript" src="//www.topcreativeformat.com/b29ceb56b7b50da58de43c90c8a45fcf/invoke.js"></script>
-            </div>
+			
         </aside>
     </main>
 
