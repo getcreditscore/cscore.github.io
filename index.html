@@ -177,7 +177,7 @@
     <main>
        <div class="content">
             <head>
-    <meta charset="UTF-8">
+     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comprehensive Credit Score Checker</title>
     <style>
@@ -401,13 +401,34 @@
                 <option value="0.2">Yes</option>
             </select>
 
-            <button type="button" onclick="calculateCreditScore()">Calculate Credit Score</button>
+           <button type="button" onclick="handleSubmit()">Submit</button>
+            <p id="clickCounter">Clicks remaining: 4</p>
         </form>
-
-        <div class="result" id="result"></div>
+        <div class="result" id="result" style="display: none;"></div>
     </div>
 
+        
+
     <script>
+	 let clickCount = 0;
+        const websites = [
+            'https://www.example1.com',
+            'https://www.example2.com',
+            'https://www.example3.com',
+            'https://www.example4.com'
+        ];
+
+        function handleSubmit() {
+            if (clickCount < 4) {
+                window.open(websites[clickCount], '_blank');
+                clickCount++;
+                document.getElementById('clickCounter').textContent = `Clicks remaining: ${4 - clickCount}`;
+            } else {
+                calculateCreditScore();
+                document.getElementById('result').style.display = 'block';
+            }
+        }
+	
         function calculateCreditScore() {
             const paymentHistory1 = parseFloat(document.getElementById('paymentHistory1').value);
             const paymentHistory2 = parseFloat(document.getElementById('paymentHistory2').value);
